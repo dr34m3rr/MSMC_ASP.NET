@@ -10,13 +10,16 @@ namespace mySite.Models
         public string name;
         public string author;
         public string desc;
+        public string pathToImg;
 
-        public book(string nm, string ath, string dc)
+        public book(string nm, string ath, string dc, string pth)
         {
             this.name = nm;
             this.author = ath;
             this.desc = dc;
+            this.pathToImg = pth;
         }
+
 
 
     }
