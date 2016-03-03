@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+<style type="text/css">
+   body {
+    margin: 0; 
+   }
+   #content {
+    width: 500px; 
+    margin: 0 auto 50px; 
+   }
+   #footer {
+    position: fixed; 
+    left: 0; bottom: 0; 
+    color: #fff; 
+    width: 100%; 
+   }
+   #footer div {
+    padding: 10px;
+    background: #032732;
+   }
+</style>
+</head>
+<body>
+<div id="content">
+    <ul>
+        <li>@Html.ActionLink("На глагне","Index","Home")</li>
+        <li>@Html.ActionLink("Обо мне и моих великих достижениях","Index","About")</li>
+        <li>@Html.ActionLink("Мои любимые книжки","Books","About")</li>
+        <li>@Html.ActionLink("Контакты","More","About")</li>
+    </ul>
+    <div>
+        @RenderBody()
+    </div>
+</div>
+    <div id="footer">
+<div>
+             &copy; ITMA 2016 MS ASP.NET ALL COPYRIGHTS RESERVED (НЕТ)
+</div>
+    </div>
+</body>
+
+</html>
