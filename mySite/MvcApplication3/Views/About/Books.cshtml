@@ -1,0 +1,17 @@
+﻿
+    <div>
+        <h1>Books that I'd like to read again.(no)</h1>
+            @foreach (var book in Model)
+            {
+                <br />
+                <b>@book.name</b>
+                <br />
+                <b>Автор: @book.author</b>
+                <br />
+                <b>Описание: @book.desc</b>
+                <br />
+                <img src="@Url.Content(book.pathToImg)" alt="Image" />
+                <br />
+            }
+        <!-- Allo -->
+    </div>
