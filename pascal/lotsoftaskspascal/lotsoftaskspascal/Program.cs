@@ -144,7 +144,143 @@ namespace lotsoftaskspascal
         }
         static void task12()
         {
-
+            Console.WriteLine("Решить квадратное уравнение, давай сюда ABC");
+            string[] temp = Console.ReadLine().Split(' ');
+            double A = double.Parse(temp[0]), B = double.Parse(temp[1]), C = double.Parse(temp[2]) ;
+            double D;
+            D = Math.Pow(B, 2) - 4 * A * C;
+            if (D < 0)
+            {
+                Console.WriteLine("No solutions");
+            }
+            else if (D == 0)
+            {
+                Console.WriteLine("Ur solution is X=" + ((-B) / (2 * A)));
+            } else
+            {
+                Console.WriteLine("2 Solutions X1=" + (((-B) + Math.Sqrt(D)) / (2 * A)) + " X2=" + (((-B) - Math.Sqrt(D)) / (2 * A)));
+            }
+        }
+        static void task13()
+        {
+            Console.WriteLine("Вывести все числа до заданного");
+            int n = int.Parse(Console.ReadLine());
+            for(int i=0;i<= n;i++)
+            {
+                Console.WriteLine(i);
+            }
+        }
+        static void task14()
+        {
+            Console.WriteLine("Вывести наибольший делитель");
+            int n = int.Parse(Console.ReadLine()), i;
+            for(i = n-1;n%i != 0;i--)
+            {
+            }
+            Console.WriteLine("Твой делитель, ёба " + i);
+        }
+        static void task15()
+        {
+            Console.WriteLine("Вывести наименьший делитель");
+            int n = int.Parse(Console.ReadLine()), i;
+            for (i = 2; n % i != 0; i++)
+            {
+            }
+            Console.WriteLine("Твой делитель, ёба " + i);
+        }
+        static void task16()
+        {
+            Console.WriteLine("Подсчитать кол-во делителей");
+            int n = int.Parse(Console.ReadLine()), count=0;
+            for(int i = 1; i<= n;i++)
+            {
+                if(n%i == 0)
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine("Кол-во делителей: " + count);
+        }
+        static void task17()
+        {
+            Console.WriteLine("Является ли число простым");
+            int n = int.Parse(Console.ReadLine()), count = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                if (n % i == 0)
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine(count == 2 ? true : false);
+        }
+        static void task18()
+        {
+            Console.WriteLine("Вывести все простые числа до заданного");
+            Stack<int> kek = new Stack<int>();
+            int n = int.Parse(Console.ReadLine()), count = 0;
+            for (int j = 1; j <= n; j++)
+            {
+                for (int i = 1; i <= j; i++)
+                {
+                    if (j % i == 0)
+                    {
+                        count++;
+                    }
+                }
+                if(count == 2)
+                {
+                    kek.Push(j);
+                }
+                count = 0;
+            }
+            while(kek.Count != 0)
+            {
+                Console.WriteLine(kek.Pop());
+            }
+        }
+        static void task19()
+        {
+            Console.WriteLine("Вывести N простых чисел");
+            Stack<int> kek = new Stack<int>();
+            int n = int.Parse(Console.ReadLine()), count = 0;
+            for (int j = 1; kek.Count != n; j++)
+            {
+                for (int i = 1; i <= j; i++)
+                {
+                    if (j % i == 0)
+                    {
+                        count++;
+                    }
+                }
+                if (count == 2)
+                {
+                    kek.Push(j);
+                }
+                count = 0;
+            }
+            while (kek.Count != 0)
+            {
+                Console.WriteLine(kek.Pop());
+            }
+        }
+        static void task20()
+        {
+            Console.WriteLine("Подсчитать кол-во делителей");
+            int n = int.Parse(Console.ReadLine()), sum=0;
+            Stack<int> kek = new Stack<int>();
+            for (int i = 1; i < n; i++)
+            {
+                if (n % i == 0)
+                {
+                    kek.Push(i);
+                }
+            }
+            while(kek.Count != 0)
+            {
+                sum += kek.Pop();
+            }
+            Console.WriteLine(sum == n ? true : false);
         }
 
         static void Main(string[] args)
@@ -157,7 +293,7 @@ namespace lotsoftaskspascal
                 Console.Clear();
                 if (!tryagain)
                 {
-                    Console.WriteLine("Для проверки задания введите его номер (1-50).");
+                    Console.WriteLine("Для проверки задания введите его номер (1-20).");
                     decision = Int32.Parse(Console.ReadLine());
                 }
                 switch (decision)
@@ -194,6 +330,33 @@ namespace lotsoftaskspascal
                         break;
                     case 11:
                         task11();
+                        break;
+                    case 12:
+                        task12();
+                        break;
+                    case 13:
+                        task13();
+                        break;
+                    case 14:
+                        task14();
+                        break;
+                    case 15:
+                        task15();
+                        break;
+                    case 16:
+                        task16();
+                        break;
+                    case 17:
+                        task17();
+                        break;
+                    case 18:
+                        task18();
+                        break;
+                    case 19:
+                        task19();
+                        break;
+                    case 20:
+                        task20();
                         break;
                     default:
                         break;
