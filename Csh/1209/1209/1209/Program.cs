@@ -24,7 +24,7 @@ namespace _1209
             }
             for (int j=0;j< n;j++)
             {
-                Console.Write((sb[arr[j]-1].ToString()));
+                Console.Write((sb[arr[j]-1]));
                 Console.Write(" ");
             }
         }
