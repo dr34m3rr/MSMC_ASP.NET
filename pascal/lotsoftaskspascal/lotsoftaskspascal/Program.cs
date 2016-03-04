@@ -72,7 +72,7 @@ namespace lotsoftaskspascal
             }
             Console.WriteLine("Max: " + max);
         }
-        static void task7()
+        static void task8()
         {
             Console.WriteLine("Вывести название дня недели по его номеру");
             Console.WriteLine("Номер дня: ");
@@ -105,8 +105,48 @@ namespace lotsoftaskspascal
                     break;
 
             }
+        }
+        static void task9()
+        {
+            Console.WriteLine("Проверить является ли 4х значное число палиндромом");
+            string num;
+            num = Console.ReadLine();
+            if ((num[0] == num[3]) && (num[1] == num[2]))
+                Console.WriteLine(true);
+            else Console.WriteLine(false);
+        }
+        static void task10()
+        {
+            Console.WriteLine("Дано четырехзначное число. Проверить, является ли оно «счастливым билетом».");
+            string temp = Console.ReadLine();
+            int left=0, right=0;
+            for(int i=0; i<temp.Length/2;i++)
+            {
+                left += int.Parse(temp[i].ToString());
+                right += int.Parse(temp[temp.Length - i - 1].ToString());
+            }
+            Console.WriteLine("left " + left + " right " + right);
+            Console.WriteLine(left == right);
 
         }
+        static void task11()
+        {
+            Console.WriteLine("Дано число, проверить является ли его двоичное представление полиндромом.");
+            string n = Convert.ToString(int.Parse(Console.ReadLine()),2);
+            Console.WriteLine("Двоичное представление: " + n);
+            bool bl = true;
+            for(int i=0;i<n.Length/2;i++)
+            {
+                if (int.Parse(n[i].ToString()) != (int.Parse(n[n.Length - i - 1].ToString())))
+                    bl = false;
+            }
+            Console.WriteLine(bl);
+        }
+        static void task12()
+        {
+
+        }
+
         static void Main(string[] args)
         {
             int decision = 0;
@@ -141,19 +181,19 @@ namespace lotsoftaskspascal
                         task6();
                         break;
                     case 7:
-                        task7();
+                        task6();
                         break;
                     case 8:
-                        //task8();
+                        task8();
                         break;
                     case 9:
-                        //task9();
+                        task9();
                         break;
                     case 10:
-                        //task10();
+                        task10();
                         break;
                     case 11:
-                        //task11();
+                        task11();
                         break;
                     default:
                         break;
