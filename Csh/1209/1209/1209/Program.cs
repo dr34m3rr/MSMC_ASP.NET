@@ -8,7 +8,7 @@ namespace _1209
         {
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
             sb.Append("1");
-            int n, i = 1, max=0 ;
+            int n, i, max=0 ;
             n = int.Parse(Console.ReadLine());
             int[] arr = new int[n];
             for(int j=0;j< n;j++)
@@ -17,10 +17,9 @@ namespace _1209
                 if (arr[j] > max)
                     max = arr[j];
             }
-            while (sb.Length < max)
+            for (i = 1; sb.Length < max; i*= 2)
             {
                 sb.Append(Convert.ToString(i * 2, 2));
-                i *= 2;
             }
             for (int j=0;j< n;j++)
             {
