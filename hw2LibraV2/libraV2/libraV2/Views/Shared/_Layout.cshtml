@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - My ASP Libro</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render()
+</head>
+<body>
+    <header>
+        Залогинься, НУ: <a href="~/RegAuth/Index">Reg/Auth page</a> На глагнэ <a href="~/Home/Index">тыц</a>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
